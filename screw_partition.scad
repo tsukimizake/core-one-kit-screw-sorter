@@ -46,5 +46,33 @@ module screw_partition(screw_name = "set name here") {
     }
 }
 
-// 使用例
-screw_partition("M3x8");
+
+module screw_tray_grid() {
+    partition_width = 75;
+    partition_depth = 20;
+    name_area_depth = 10;
+    
+    // ネジ名のリスト（24個分）
+    screw_names = [
+        "M2x8", "M2x10", "M2x16",
+        "M3x8", "M3x10", "M3x16",
+        "M4x8", "M4x10", "M4x16",
+        "M5x8", "M5x10", "M5x16",
+        "M6x8", "M6x10", "M6x16",
+        "M8x16", "M8x20", "M8x25",
+        "予備1", "予備2", "予備3", "予備4"
+    ];
+    
+    for (row = [0:5]) {
+        for (col = [0:2]) {
+            translate([col * partition_width, 
+                      row * (partition_depth + name_area_depth), 
+                      0]) {
+                screw_partition(screw_names[row * 4 + col]);
+            }
+        }
+    }
+}
+
+// グリッドを表示
+screw_tray_grid();
