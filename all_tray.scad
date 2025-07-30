@@ -1,4 +1,4 @@
-use <screw_partition.scad>
+use <partition.scad>
 
 module screw_tray_grid(screw_names) {
     partition_width = 75;
@@ -12,7 +12,7 @@ module screw_tray_grid(screw_names) {
             translate([col * partition_width, 
                       row * (partition_depth + name_area_depth), 
                       0]) {
-                screw_partition(screw_names[row * 3 + col]);
+                partition(screw_names[row * 3 + col]);
             }
         }
     }

@@ -1,4 +1,4 @@
-use <screw_partition.scad>
+use <partition.scad>
 
 module nut_tray_grid(nut_names) {
     partition_width = 75;
@@ -10,7 +10,7 @@ module nut_tray_grid(nut_names) {
             translate([col * partition_width, 
                       row * (partition_depth + name_area_depth), 
                       0]) {
-                screw_partition(nut_names[row * 2 + col]);
+                partition(nut_names[row * 2 + col]);
             }
         }
     }

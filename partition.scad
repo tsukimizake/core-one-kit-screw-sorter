@@ -1,4 +1,4 @@
-module screw_partition(screw_name = "set name here") {
+module partition(screw_name = "set name here") {
     partition_width = 75;
     partition_depth = 15;
     partition_height = 65;
@@ -50,6 +50,4 @@ module screw_partition(screw_name = "set name here") {
     }
 }
 
-//screw_partition();
-
-//screw_partition();
+partition();
